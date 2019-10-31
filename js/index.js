@@ -54,6 +54,7 @@ middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
 const links = document.querySelectorAll('a');
 links.forEach((element, n) => {
 element.textContent = siteContent['nav'][`nav-item-${n + 1}`]
+element.style.color = 'green';  // Task 3
 });
 
 // Headline
@@ -90,3 +91,21 @@ contactContent[2].textContent = siteContent['contact']['email'];
 // Footer 
 const fTag = document.querySelector('footer p');
 fTag.textContent = siteContent['footer']['copyright'];
+
+// Task 3
+
+// Append Child
+const navBar = document.querySelector('nav');
+
+const newLink = document.createElement('a');
+newLink.textContent = 'Fun';
+newLink.style.color = 'green';
+newLink.href = '#';
+navBar.appendChild(newLink);
+
+// Prepend
+const newLinkTwo = document.createElement('a');
+newLinkTwo.textContent = 'Home';
+newLinkTwo.style.color = 'green';
+newLinkTwo.href = '#';
+navBar.prepend(newLinkTwo);
